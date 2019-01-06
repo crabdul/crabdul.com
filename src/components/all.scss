@@ -33,7 +33,7 @@ a, a:active, a:hover, a:visited, {
 }
 
 .home-posts {
-	margin-top: 160px;
+	margin-top: 198px;
 }
 
 $gutter-gap: 16px;
@@ -47,12 +47,30 @@ $gutter-gap: 16px;
 }
 
 .entry {
+    position: relative;
 	display: grid;
 	grid-gap: $gutter-gap;
-	padding-top: 8px;
+    height: 364px;
+    padding-top: 16px;
+    margin-bottom: -198px;
+    background-color: white;
 	border-top: 1px solid black;
+    transition: all ease .3s;
 
 	@include breakpoint(sm) {
-		grid-template-columns: 1fr 3fr;
+		grid-template-columns: 2fr 1fr 7fr 1fr;
+        grid-template-areas: 'meta . cover .'
 	}
+}
+
+.entry:hover {
+    transform: translateY(-32px);
+}
+
+.entry-meta {
+    grid-area: meta;
+}
+
+.entry-cover {
+    grid-area: cover;
 }

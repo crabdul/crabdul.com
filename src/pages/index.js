@@ -14,13 +14,13 @@ export default class IndexPage extends React.Component {
         <section className="home-posts">
           <div className="container">
             {posts
-              .map(({ node: post }) => (
+              .map(({ node: post }, i) => (
                     <Link className="entry" to={post.fields.slug} key={post.id}>
-						<div className=''>
+						<div className='entry-meta'>
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
-                        <Img sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
+                        <Img className='entry-cover' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
                     </Link>
               ))}
           </div>
