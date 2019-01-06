@@ -1,3 +1,4 @@
+@import '../styles/mixins';
 @import '../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Karla');
 
@@ -16,9 +17,23 @@ body {
     font-size: 62.5%;
 }
 
-a,
-p {
-	font-size: 1.1rem;
+
+a, h2, p, small {
+	font-size: 1.05rem;
+	line-height: 1.6rem;
+}
+
+h2 {
+	margin: 0;
+}
+
+a, a:active, a:hover, a:visited, {
+	text-decoration: none;
+	color: inherit;
+}
+
+.home-posts {
+	margin-top: 160px;
 }
 
 $gutter-gap: 16px;
@@ -29,4 +44,15 @@ $gutter-gap: 16px;
     margin-left: auto;
     padding-right: $gutter-gap;
     padding-left: $gutter-gap;
+}
+
+.entry {
+	display: grid;
+	grid-gap: $gutter-gap;
+	padding-top: 8px;
+	border-top: 1px solid black;
+
+	@include breakpoint(sm) {
+		grid-template-columns: 1fr 3fr;
+	}
 }
