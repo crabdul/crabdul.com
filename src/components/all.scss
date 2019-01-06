@@ -1,4 +1,5 @@
 @import '../styles/variables';
+@import url('https://fonts.googleapis.com/css?family=Karla');
 
 * {
     box-sizing: border-box;
@@ -11,7 +12,13 @@ html, body {
 }
 
 body {
+    font-family: 'Karla', sans-serif;
     font-size: 62.5%;
+}
+
+a,
+p {
+	font-size: 1.1rem;
 }
 
 $gutter-gap: 16px;
