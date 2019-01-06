@@ -5,8 +5,32 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 
 
-const animateAndNavigateTo = (slug) => {
-    navigate(slug)
+const whichTransitionEvent = (el) => {
+    const transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+
+    let t;
+    for(t in transitions){
+        if( el.style[t] !== undefined ){
+            return transitions[t];
+        }
+    }
+}
+
+const animateAndNavigateTo = (e, slug) => {
+    const $target = e.currentTarget
+    const distanceToTop = $target.offsetTop
+    const maxHeight = 164
+    const transformHeight = distanceToTop - maxHeight
+    $target.style.transform = `translateY(-${transformHeight}px)`
+    const transitionEvent = whichTransitionEvent($target)
+    $target.addEventListener(transitionEvent, () => {
+        navigate(slug)
+    });
 }
 
 export default class IndexPage extends React.Component {
@@ -20,7 +44,7 @@ export default class IndexPage extends React.Component {
           <div className="container">
             {posts
               .map(({ node: post }, i) => (
-                    <article className="entry" onClick={() => animateAndNavigateTo(post.fields.slug)} key={post.id}>
+                    <article className="entry" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
 						<div className='entry-meta'>
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
