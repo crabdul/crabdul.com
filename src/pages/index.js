@@ -27,9 +27,12 @@ const animateAndNavigateTo = (e, slug) => {
     const maxHeight = 164
     const transformHeight = distanceToTop - maxHeight
     $target.style.transform = `translateY(-${transformHeight}px)`
+    $target.style.transitionDuration = "0.8s"
     const transitionEvent = whichTransitionEvent($target)
     $target.addEventListener(transitionEvent, () => {
-        navigate(slug)
+        setTimeout(() => {
+            navigate(slug)
+        }, 100)
     });
 }
 
