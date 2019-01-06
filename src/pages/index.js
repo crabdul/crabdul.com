@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { navigate, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
+
+
+const animateAndNavigateTo = (slug) => {
+    navigate(slug)
+}
 
 export default class IndexPage extends React.Component {
   render() {
@@ -15,13 +20,13 @@ export default class IndexPage extends React.Component {
           <div className="container">
             {posts
               .map(({ node: post }, i) => (
-                    <Link className="entry" to={post.fields.slug} key={post.id}>
+                    <article className="entry" onClick={() => animateAndNavigateTo(post.fields.slug)} key={post.id}>
 						<div className='entry-meta'>
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
                         <Img className='entry-cover' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
-                    </Link>
+                    </article>
               ))}
           </div>
         </section>

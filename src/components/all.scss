@@ -47,6 +47,7 @@ $gutter-gap: 16px;
 }
 
 .entry {
+    cursor: pointer;
     position: relative;
 	display: grid;
 	grid-gap: $gutter-gap;
