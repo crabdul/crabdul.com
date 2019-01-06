@@ -9,6 +9,7 @@ import Content, { HTMLContent } from '../components/Content'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
+  date,
   description,
   tags,
   title,
@@ -19,10 +20,11 @@ export const BlogPostTemplate = ({
   return (
     <section className="section">
       {helmet || ''}
-      <div className="container content">
+      <div className="container content content-top-margin">
            <div className="post-meta-content">
                 <div className="post-meta">
                     <h1>{title}</h1>
+                    <small>{date}</small>
                 </div>
                 <PostContent className="post-content" content={content} title={title} />
            </div>
@@ -59,6 +61,7 @@ const BlogPost = ({ data }) => {
       <BlogPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
+        date={post.frontmatter.date}
         description={post.frontmatter.description}
         helmet={
           <Helmet

@@ -40,7 +40,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="home-posts">
+        <section className="content-top-margin">
           <div className="container">
             {posts
               .map(({ node: post }, i) => (
