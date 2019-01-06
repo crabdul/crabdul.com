@@ -1,0 +1,17 @@
+@import 'variables';
+
+$breakpoints: (
+    'sm':  $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg':  $breakpoint-lg,
+    'xlg': $breakpoint-xlg,
+) !default;
+
+@mixin breakpoint($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+}
+
