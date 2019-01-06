@@ -49,7 +49,11 @@ export default class IndexPage extends React.Component {
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
+                    <div className="post-content">
+
                         <Img className='post-content' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
+                  <p>{post.excerpt}</p>
+                  </div>
                     </article>
               ))}
           </div>
@@ -75,6 +79,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          excerpt(pruneLength: 400)
           id
           fields {
             slug
