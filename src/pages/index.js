@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 
 export default class IndexPage extends React.Component {
@@ -19,7 +20,7 @@ export default class IndexPage extends React.Component {
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
-                        <p>{post.excerpt}</p>
+                        <Img sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
                     </Link>
               ))}
           </div>
@@ -45,12 +46,18 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 400)
           id
           fields {
             slug
           }
           frontmatter {
+            coverPhoto {
+                childImageSharp {
+                    sizes(maxWidth: 600) {
+                      ...GatsbyImageSharpSizes
+                    }
+                }
+            }
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
