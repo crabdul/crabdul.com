@@ -74,3 +74,11 @@ $gutter-gap: 16px;
 .entry-cover {
     grid-area: cover;
 }
+
+.footer {
+    position: relative;
+    z-index: 999;
+    height: 198px;
+    background-color: white;
+    border-top: 1px solid black;
+}
