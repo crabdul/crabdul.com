@@ -44,12 +44,12 @@ export default class IndexPage extends React.Component {
           <div className="container">
             {posts
               .map(({ node: post }, i) => (
-                    <article className="entry" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
-						<div className='entry-meta'>
+                    <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
+						<div className='post-meta'>
 							<h2>{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
-                        <Img className='entry-cover' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
+                        <Img className='post-content' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
                     </article>
               ))}
           </div>

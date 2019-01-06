@@ -49,31 +49,35 @@ $gutter-gap: 16px;
 .entry {
     cursor: pointer;
     position: relative;
-	display: grid;
-	grid-gap: $gutter-gap;
     height: 364px;
     padding-top: 16px;
     margin-bottom: -198px;
     background-color: white;
 	border-top: 1px solid black;
     transition: all ease .3s;
-
-	@include breakpoint(sm) {
-		grid-template-columns: 2fr 1fr 7fr 1fr;
-        grid-template-areas: 'meta . cover .'
-	}
 }
 
 .entry:hover {
     transform: translateY(-32px);
 }
 
-.entry-meta {
+.post-meta-content {
+    position: relative;
+	display: grid;
+	grid-gap: $gutter-gap;
+	
+    @include breakpoint(sm) {
+		grid-template-columns: 2fr 1fr 7fr 1fr;
+        grid-template-areas: 'meta . content .'
+	}
+}
+
+.post-meta {
     grid-area: meta;
 }
 
-.entry-cover {
-    grid-area: cover;
+.post-content {
+    grid-area: content;
 }
 
 .footer {
