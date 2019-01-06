@@ -1,5 +1,6 @@
 ---
-templateKey: 'blog-post'
+coverPhoto: /img/products-full-width.jpg
+templateKey: blog-post
 title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
 date: 2017-01-04T15:04:10.000Z
 description: >-
