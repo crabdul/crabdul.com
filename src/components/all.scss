@@ -22,8 +22,9 @@ a, h1, h2, p, small {
 	line-height: 1.6rem;
 }
 
-h1, h2 {
+h1, h2, ul {
 	margin: 0;
+    padding: 0;
 }
 
 a, a:active, a:hover, a:visited, {
@@ -31,7 +32,19 @@ a, a:active, a:hover, a:visited, {
 	color: inherit;
 }
 
+li {
+    list-style-type: none;
+}
+
 $gutter-gap: 16px;
+
+.container {
+    max-width: $breakpoint-md;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gutter-gap;
+    padding-left: $gutter-gap;
+}
 
 nav {
     position: fixed;
@@ -76,12 +89,16 @@ nav {
     margin-top: 32px;
 }
 
-.container {
-    max-width: $breakpoint-md;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $gutter-gap;
-    padding-left: $gutter-gap;
+.index-page ul li {
+    transition: all ease .3s;
+}
+
+.index-page ul li:hover {
+    transform: translateY(-32px);
+}
+
+.bt1-black {
+    border-top: 1px solid black;
 }
 
 .entry {
@@ -91,12 +108,7 @@ nav {
     padding-top: 16px;
     margin-bottom: -198px;
     background-color: white;
-	border-top: 1px solid black;
-    transition: all ease .3s;
-}
-
-.entry:hover {
-    transform: translateY(-32px);
+    transition: all .4s ease;
 }
 
 .blog-post {

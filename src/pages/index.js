@@ -23,16 +23,17 @@ const whichTransitionEvent = (el) => {
 
 const animateAndNavigateTo = (e, slug) => {
     const $target = e.currentTarget
-    const distanceToTop = $target.offsetTop
-    const maxHeight = document.querySelector('.spacer').offsetHeight;
-    const transformHeight = distanceToTop - maxHeight
-    $target.style.transform = `translateY(-${transformHeight}px)`
-    $target.style.transitionDuration = "0.8s"
+    const distanceToTop = $target.getBoundingClientRect().top - 16
+    const spacerHeight = document.querySelector('.spacer').offsetHeight;
+    $target.style.transitionDuration = "1s"
+    $target.style.height = "1000px"
+    $target.style.transform = `translateY(-${distanceToTop}px)`
+    $target.style.paddingTop = `${spacerHeight}px`
     const transitionEvent = whichTransitionEvent($target)
     $target.addEventListener(transitionEvent, () => {
         setTimeout(() => {
             navigate(slug)
-        }, 100)
+        }, 300)
     });
 }
 
@@ -45,8 +46,11 @@ export default class IndexPage extends React.Component {
       <Layout>
         <section className="index-page">
           <div className="container">
+            <ul>
             {posts
               .map(({ node: post }, i) => (
+                  <li>
+                    <div className="bt1-black"/>
                     <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
 						<div className='post-meta'>
 							<h2>{post.frontmatter.title}</h2>
@@ -58,7 +62,9 @@ export default class IndexPage extends React.Component {
                   <p>{post.excerpt}</p>
                   </div>
                     </article>
+                  </li>
               ))}
+            </ul>
           </div>
         </section>
       </Layout>
