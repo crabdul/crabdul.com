@@ -1,7 +1,6 @@
 @import '../styles/mixins';
 @import '../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Karla');
-
 * {
     box-sizing: border-box;
 }
@@ -32,11 +31,46 @@ a, a:active, a:hover, a:visited, {
 	color: inherit;
 }
 
+$gutter-gap: 16px;
+
+nav {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: white;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 7fr 1fr;
+    grid-template-areas: 'home . menu portfolio';
+    grid-gap: $gutter-gap;
+    width: 100%;
+    background-color: white;
+}
+
+.navbar-home {
+    grid-area: home;
+}
+
+.navbar-menu {
+    grid-area: menu;
+}
+
+.navbar-menu-item {
+    margin-right: 8px;
+}
+
+.navbar-portfolio {
+    grid-area: portfolio;
+}
+
 .content-top-margin {
 	margin-top: 198px;
 }
-
-$gutter-gap: 16px;
 
 .container {
     max-width: $breakpoint-md;

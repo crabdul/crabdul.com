@@ -10,26 +10,30 @@ const Navbar = class extends React.Component {
 	}
    return (
 
-  <nav className="navbar is-transparent" role="navigation" aria-label="main-navigation">
-    <div className="container">
-        <Link to="/" className="navbar-item" title="Logo">
+  <nav role="navigation">
+       <div className="container">
+       <div className="navbar" role="navigation" aria-label="main-navigation">
+       <Link className="navbar-home" to="/">
             crab.land
         </Link>
-        <Link className="navbar-item" to="/about" activeStyle={activeLinkStyle}>
+       <div className="navbar-menu">
+        <Link className="navbar-menu-item" to="/about" activeStyle={activeLinkStyle}>
           About
         </Link>
-        <Link className="navbar-item" to="/" activeStyle={activeLinkStyle}>
+        <Link className="navbar-menu-item" to="/" activeStyle={activeLinkStyle}>
           Photos
         </Link>
+       </div>
         <a
-          className="navbar-item"
+          className="navbar-portfolio"
           href="https://elkhazaani.space/"
           target="_blank"
           rel="noopener noreferrer"
         >
-            elkhazaani.space
+            <span role="img" aria-label="save icon">💾</span>
         </a>
-      </div>
+       </div>
+       </div>
   </nav>
   )}
 }
