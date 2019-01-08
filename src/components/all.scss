@@ -68,8 +68,12 @@ nav {
     grid-area: portfolio;
 }
 
-.content-top-margin {
-	margin-top: 198px;
+.spacer {
+    min-height: 25vh;
+}
+
+.index-page {
+    margin-top: 32px;
 }
 
 .container {
@@ -93,6 +97,10 @@ nav {
 
 .entry:hover {
     transform: translateY(-32px);
+}
+
+.blog-post {
+    padding-top: 16px;
 }
 
 .post-meta-content {

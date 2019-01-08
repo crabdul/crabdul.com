@@ -24,7 +24,7 @@ const whichTransitionEvent = (el) => {
 const animateAndNavigateTo = (e, slug) => {
     const $target = e.currentTarget
     const distanceToTop = $target.offsetTop
-    const maxHeight = 164
+    const maxHeight = document.querySelector('.spacer').offsetHeight;
     const transformHeight = distanceToTop - maxHeight
     $target.style.transform = `translateY(-${transformHeight}px)`
     $target.style.transitionDuration = "0.8s"
@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <section className="content-top-margin">
+        <section className="index-page">
           <div className="container">
             {posts
               .map(({ node: post }, i) => (
