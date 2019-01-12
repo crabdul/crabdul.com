@@ -105,11 +105,16 @@ nav {
 .entry {
     cursor: pointer;
     position: relative;
-    height: 364px;
+    height: 196px;
     padding-top: 16px;
-    margin-bottom: -198px;
+    margin-bottom: -32px;
     background-color: white;
     transition: all .4s ease;
+    overflow: hidden;
+}
+
+.entry > div {
+    height: 100%;
 }
 
 .blog-post {
@@ -138,7 +143,7 @@ nav {
 .footer {
     position: relative;
     z-index: 999;
-    height: 198px;
+    height: 96px;
     background-color: white;
     border-top: 1px solid black;
 }
