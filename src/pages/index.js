@@ -5,42 +5,25 @@ import Img from 'gatsby-image'
 import Layout from '../components/Layout'
 
 
-const whichTransitionEvent = (el) => {
-    const transitions = {
-      'transition':'transitionend',
-      'OTransition':'oTransitionEnd',
-      'MozTransition':'transitionend',
-      'WebkitTransition':'webkitTransitionEnd'
-    }
-
-    let t;
-    for(t in transitions){
-        if( el.style[t] !== undefined ){
-            return transitions[t];
-        }
-    }
-}
-
 const animateAndNavigateTo = (e, slug) => {
     const $target = e.currentTarget
+    $target.parentElement.style.transform = 'translateY(-32px)'
     // 15px rather than 16px as entry has a 1px top border
     const distanceToTop = $target.getBoundingClientRect().top - 15
     const spacerHeight = document.querySelector('.spacer').offsetHeight;
-    $target.style.transitionDuration = "1s"
-    $target.style.height = "1000px"
-    console.log(Math.abs(distanceToTop - spacerHeight))
+    $target.style.transitionDuration = "0.7s"
     if (Math.abs(distanceToTop - spacerHeight) < 16) {
         $target.style.boxSizing = 'content-box'
-        $target.previousElementSibling.style.transitionDuration = "1s"
+        $target.previousElementSibling.style.transitionDuration = "0.7s"
         $target.previousElementSibling.style.transform = `translateY(-${distanceToTop}px)`
     } else {
         $target.style.transform = `translateY(-${distanceToTop}px)`
         $target.style.paddingTop = `${spacerHeight}px`
     }
-    const transitionEvent = whichTransitionEvent($target)
+    $target.style.height = `${window.innerHeight}px`
     setTimeout(() => {
         navigate(slug)
-    }, 1100)
+    }, 700)
 }
 
 export default class IndexPage extends React.Component {
