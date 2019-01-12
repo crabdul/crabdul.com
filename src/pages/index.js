@@ -23,7 +23,8 @@ const whichTransitionEvent = (el) => {
 
 const animateAndNavigateTo = (e, slug) => {
     const $target = e.currentTarget
-    const distanceToTop = $target.getBoundingClientRect().top - 16
+    // 15px rather than 16px as entry has a 1px top border
+    const distanceToTop = $target.getBoundingClientRect().top - 15
     const spacerHeight = document.querySelector('.spacer').offsetHeight;
     $target.style.transitionDuration = "1s"
     $target.style.height = "1000px"
@@ -50,7 +51,6 @@ export default class IndexPage extends React.Component {
             {posts
               .map(({ node: post }, i) => (
                   <li>
-                    <div className="bt1-black"/>
                     <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
 						<div className='post-meta'>
 							<h2>{post.frontmatter.title}</h2>
