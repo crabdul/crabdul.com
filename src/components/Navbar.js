@@ -13,9 +13,11 @@ const Navbar = class extends React.Component {
   <nav role="navigation">
        <div className="container">
        <div className="navbar" role="navigation" aria-label="main-navigation">
-       <Link className="navbar-home" to="/">
-            crab.land
-        </Link>
+       <div>
+           <Link className="navbar-home" to="/">
+               crab.land
+           </Link>
+       </div>
        <div className="navbar-menu">
         <Link className="navbar-menu-item" to="/about" activeStyle={activeLinkStyle}>
           About
@@ -24,14 +26,15 @@ const Navbar = class extends React.Component {
           Photos
         </Link>
        </div>
-        <a
-          className="navbar-portfolio"
-          href="https://elkhazaani.space/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-            <span role="img" aria-label="save icon">💾</span>
-        </a>
+       <div className="navbar-portfolio">
+           <a
+               href="https://elkhazaani.space/"
+               target="_blank"
+               rel="noopener noreferrer"
+           >
+               e.space
+           </a>
+       </div>
        </div>
        </div>
   </nav>

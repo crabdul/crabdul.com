@@ -34,9 +34,15 @@ h1, h2, ul {
     padding: 0;
 }
 
-a, a:active, a:hover, a:visited, {
-	text-decoration: none;
+a, a:active, a:visited, {
+    text-decoration: none;
+    border-bottom: 1px solid #000;
 	color: inherit;
+}
+
+a:hover {
+    color: $pink-500;
+    border-bottom: 1px solid $pink-500;
 }
 
 li {
@@ -91,6 +97,7 @@ nav {
 
 .navbar-portfolio {
     grid-area: portfolio;
+    text-align: end;
 }
 
 .spacer {
