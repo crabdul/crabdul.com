@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
                       <div className="black-line" />}
                     <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
 						<div className='post-meta'>
-							<h2>{post.frontmatter.title}</h2>
+							<h2 className="p">{post.frontmatter.title}</h2>
 							<small>{post.frontmatter.date}</small>
 						</div>
                     <div className="post-content">

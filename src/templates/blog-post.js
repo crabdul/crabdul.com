@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
       <div className="container">
            <div className="post-meta-content">
                 <div className="post-meta">
-                    <h1>{title}</h1>
+                    <h1 className="p">{title}</h1>
                     <small>{date}</small>
                 </div>
                 <PostContent className="post-content" content={content} title={title} />

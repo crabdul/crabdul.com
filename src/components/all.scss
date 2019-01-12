@@ -17,10 +17,17 @@ body {
 }
 
 
-a, h1, h2, p, small {
+a, blockquote, li, ol, p, .p, small, ul {
 	font-size: 1.05rem;
 	line-height: 1.6rem;
 }
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.17rem; }
+h3 { font-size: 1.12rem; }
+h4 { font-size: 1.05rem; }
+h5 { font-size: .83rem; }
+h6 { font-size: .75rem; }
 
 h1, h2, ul {
 	margin: 0;
