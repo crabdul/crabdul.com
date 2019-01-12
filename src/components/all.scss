@@ -43,6 +43,11 @@ li {
     list-style-type: none;
 }
 
+blockquote {
+    border-left: 1px solid #000;
+    padding-left: 2rem;
+}
+
 $gutter-gap: 16px;
 
 .container {
