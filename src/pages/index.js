@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import Entry from '../components/Entry'
 import Layout from '../components/Layout'
 import { animateAndNavigateTo } from '../utils/helpers'
 
@@ -20,19 +20,9 @@ export default class IndexPage extends React.Component {
               .map(({ node: post }, i) => (
                   <li>
                       {i == 0 &&
-                      <div className="black-line" />}
-                    <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
-						<div className='post-meta'>
-							<h2 className="p">{post.frontmatter.title}</h2>
-							<small>{post.frontmatter.date}</small>
-						</div>
-                    <div className="post-content">
-
-                        <Img className='post-content' sizes={post.frontmatter.coverPhoto.childImageSharp.sizes} alt={post.frontmatter.title} />
-                  <p>{post.excerpt}</p>
-                  </div>
-                    </article>
-                  </li>
+                              <div className="black-line" />}
+                              <Entry post={post} animateAndNavigateTo={animateAndNavigateTo} />
+                    </li>
               ))}
             </ul>
           </div>
