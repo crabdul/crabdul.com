@@ -138,6 +138,9 @@ nav {
     border-top: none;
 }
 
+
+// BLOG POST
+
 .blog-post {
     padding-top: 16px;
 }
@@ -159,6 +162,10 @@ nav {
 
 .post-content {
     grid-area: content;
+}
+
+.post-content p:first-child {
+    margin-top: 0;
 }
 
 .footer {
