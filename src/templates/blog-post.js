@@ -26,20 +26,22 @@ export const BlogPostTemplate = ({
                     <h1 className="p">{title}</h1>
                     <small>{date}</small>
                 </div>
-                <PostContent className="post-content" content={content} title={title} />
+                <div className="post-content">
+                    <PostContent content={content} title={title} />
+                    {tags && tags.length ? (
+                        <div style={{ marginTop: `4rem`, marginBottom: `2rem` }}>
+                            <h4>Tags</h4>
+                            <ul className="taglist">
+                                {tags.map(tag => (
+                                    <li key={tag + `tag`}>
+                                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : null}
+                </div>
            </div>
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
       </div>
     </section>
   )

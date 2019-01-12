@@ -168,6 +168,11 @@ nav {
     margin-top: 0;
 }
 
+.taglist li {
+    display: inline-block;
+    margin-right: 8px;
+}
+
 .footer {
     position: relative;
     z-index: 999;
