@@ -98,6 +98,10 @@ nav {
     transform: translateY(-32px);
 }
 
+.black-line {
+    border-top: 1px solid black;
+}
+
 .entry {
     border-top: 1px solid black;
     cursor: pointer;
@@ -110,8 +114,9 @@ nav {
     overflow: hidden;
 }
 
-.entry > div {
-    height: 100%;
+.entry:not(:first-child) {
+    padding-top: 15px;
+    border-top: none;
 }
 
 .blog-post {

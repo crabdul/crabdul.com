@@ -28,14 +28,19 @@ const animateAndNavigateTo = (e, slug) => {
     const spacerHeight = document.querySelector('.spacer').offsetHeight;
     $target.style.transitionDuration = "1s"
     $target.style.height = "1000px"
-    $target.style.transform = `translateY(-${distanceToTop}px)`
-    $target.style.paddingTop = `${spacerHeight}px`
+    console.log(Math.abs(distanceToTop - spacerHeight))
+    if (Math.abs(distanceToTop - spacerHeight) < 16) {
+        $target.style.boxSizing = 'content-box'
+        $target.previousElementSibling.style.transitionDuration = "1s"
+        $target.previousElementSibling.style.transform = `translateY(-${distanceToTop}px)`
+    } else {
+        $target.style.transform = `translateY(-${distanceToTop}px)`
+        $target.style.paddingTop = `${spacerHeight}px`
+    }
     const transitionEvent = whichTransitionEvent($target)
-    $target.addEventListener(transitionEvent, () => {
-        setTimeout(() => {
-            navigate(slug)
-        }, 300)
-    });
+    setTimeout(() => {
+        navigate(slug)
+    }, 1100)
 }
 
 export default class IndexPage extends React.Component {
@@ -51,6 +56,8 @@ export default class IndexPage extends React.Component {
             {posts
               .map(({ node: post }, i) => (
                   <li>
+                      {i == 0 &&
+                      <div className="black-line" />}
                     <article className="entry post-meta-content" onClick={(e) => animateAndNavigateTo(e, post.fields.slug)} key={post.id}>
 						<div className='post-meta'>
 							<h2>{post.frontmatter.title}</h2>
