@@ -183,6 +183,15 @@ ul.entries li:hover {
     margin-right: 8px;
 }
 
+.about {
+    width: 80%;
+    margin: 64px auto 128px;
+
+    @include breakpoint(xs) {
+        width: 40%;
+    }
+}
+
 .footer {
     position: relative;
     z-index: 999;

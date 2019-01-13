@@ -10,16 +10,11 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
     return (
         <section className="section section--gradient">
             <div className="container">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1">
-                        <div className="section">
-                            <h1>{title}</h1>
-                            <PageContent
-                                className="content"
-                                content={content}
-                            />
-                        </div>
-                    </div>
+                <div className="about">
+                    <PageContent
+                        className="content"
+                        content={content}
+                    />
                 </div>
             </div>
         </section>
