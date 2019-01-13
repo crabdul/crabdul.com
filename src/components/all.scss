@@ -176,7 +176,18 @@ ul.entries li:hover {
 .footer {
     position: relative;
     z-index: 999;
-    height: 96px;
+    display: grid;
+    min-height: 96px;
     background-color: white;
     border-top: 1px solid black;
+
+    @include breakpoint(sm) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.footer p:nth-child(2) {
+    @include breakpoint(sm) {
+        text-align: right;
+    }
 }
