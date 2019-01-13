@@ -108,12 +108,12 @@ nav {
     margin-top: 32px;
 }
 
-.index-page ul li {
+ul.entries li {
     position: relative;
     transition: all ease .3s;
 }
 
-.index-page ul li:hover {
+ul.entries li:hover {
     transform: translateY(-32px);
 }
 

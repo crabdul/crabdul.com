@@ -98,13 +98,10 @@ const BlogPost = ({ data }) => {
                 title={post.frontmatter.title}
             />
             <div className="container">
-                <ul>
+                <ul className="entries">
                     {posts.map((post, i) => (
                         <li key={i}>
-                            {i == 0 && <div className="black-line" />}
-                            <Entry
-                                post={post}
-                            />
+                            <Entry post={post} />
                         </li>
                     ))}
                 </ul>

@@ -13,7 +13,7 @@ export default class IndexPage extends React.Component {
             <Layout>
                 <section className="index-page">
                     <div className="container">
-                        <ul>
+                        <ul className="entries">
                             {posts.map(({ node: post }, i) => (
                                 <li key={i}>
                                     {i == 0 && <div className="black-line" />}
