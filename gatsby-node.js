@@ -54,14 +54,20 @@ exports.createPages = ({ actions, graphql }) => {
             const olderPosts = posts.slice(index + 1)
             const newerPosts = posts.slice(0, index)
 
-            const previousId =
+            let previousId =
                 index === 0 || olderPosts.length === 0
                     ? null
                     : findPreviousPostId(olderPosts, index)
-            const nextId =
+            let nextId =
                 index === posts.length - 1 && newerPosts.length === 0
                     ? null
                     : findNextPostId(newerPosts, index)
+            if (!previousId) {
+                previousId = posts[0].node.id
+            }
+            if (!nextId) {
+                nextId = findPreviousPostId(olderPosts.reverse())
+            }
             createPage({
                 path: edge.node.fields.slug,
                 tags: edge.node.frontmatter.tags,
