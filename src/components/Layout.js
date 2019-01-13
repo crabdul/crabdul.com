@@ -36,16 +36,22 @@ const TemplateWrapper = ({ children }) => (
                     <link
                         rel="icon"
                         type="image/png"
-                        href="/img/favicon-32x32.png"
+                        href="/img/favicon.png?v=2"
                         sizes="32x32"
                     />
                     <link
                         rel="icon"
                         type="image/png"
-                        href="/img/favicon-16x16.png"
+                        href="/img/favicon.png?v=2"
                         sizes="16x16"
                     />
 
+                    <link
+                        rel="icon"
+                        type="image/x-icon"
+                        href="/img/favicon.ico?v=2"
+                        sizes="16x16"
+                    />
                     <link
                         rel="mask-icon"
                         href="/img/safari-pinned-tab.svg"
@@ -59,7 +65,7 @@ const TemplateWrapper = ({ children }) => (
                         content={data.site.siteMetadata.title}
                     />
                     <meta property="og:url" content="/" />
-                    <meta property="og:image" content="/img/og-image.jpg" />
+                    <meta property="og:image" content="/img/favicon.png" />
                 </Helmet>
                 <Navbar />
                 <div className="spacer" />
