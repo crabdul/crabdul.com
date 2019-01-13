@@ -157,6 +157,11 @@ ul.entries li:hover {
 	}
 }
 
+// Override styling for CMS
+.frame-content .post-meta-content {
+    display: initial;
+}
+
 .post-meta {
     grid-area: meta;
 }
@@ -167,6 +172,10 @@ ul.entries li:hover {
 
 .post-content p:first-child {
     margin-top: 0;
+}
+
+.post-content image {
+    width: 100%;
 }
 
 .taglist li {
