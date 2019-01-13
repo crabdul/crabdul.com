@@ -1,7 +1,8 @@
 import React from 'react'
 import Img from 'gatsby-image'
+import { animateAndNavigateTo } from '../utils/helpers'
 
-const Entry = ({ post, animateAndNavigateTo }) => (
+const Entry = ({ post }) => (
     <article
         className="entry post-meta-content"
         onClick={e => animateAndNavigateTo(e, post.fields.slug)}

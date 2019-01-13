@@ -6,7 +6,6 @@ import { graphql, Link } from 'gatsby'
 import Entry from '../components/Entry'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import { animateAndNavigateTo } from '../utils/helpers'
 
 export const BlogPostTemplate = ({
     content,
@@ -105,7 +104,6 @@ const BlogPost = ({ data }) => {
                             {i == 0 && <div className="black-line" />}
                             <Entry
                                 post={post}
-                                animateAndNavigateTo={animateAndNavigateTo}
                             />
                         </li>
                     ))}

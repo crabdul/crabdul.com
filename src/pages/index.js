@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Entry from '../components/Entry'
 import Layout from '../components/Layout'
-import { animateAndNavigateTo } from '../utils/helpers'
 
 export default class IndexPage extends React.Component {
     render() {
@@ -16,14 +15,9 @@ export default class IndexPage extends React.Component {
                     <div className="container">
                         <ul>
                             {posts.map(({ node: post }, i) => (
-                                <li>
+                                <li key={i}>
                                     {i == 0 && <div className="black-line" />}
-                                    <Entry
-                                        post={post}
-                                        animateAndNavigateTo={
-                                            animateAndNavigateTo
-                                        }
-                                    />
+                                    <Entry post={post} />
                                 </li>
                             ))}
                         </ul>
