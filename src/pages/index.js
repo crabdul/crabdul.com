@@ -4,6 +4,9 @@ import { graphql } from 'gatsby'
 import Entry from '../components/Entry'
 import Layout from '../components/Layout'
 
+var a = []
+
+
 export default class IndexPage extends React.Component {
     render() {
         const { data } = this.props
