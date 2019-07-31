@@ -14,16 +14,14 @@ tags:
 ---
 ![View of the sea](/img/001157170004.jpg)
 
+## Teshima
 ![Basketball nets](/img/001157170003.jpg)
-
 ![Ship on the shore](/img/001157170002.jpg)
-
 ![House with a bush](/img/001157170005.jpg)
-
 ![House patio](/img/001157170006.jpg)
-
 ![House tiles](/img/001157170007.jpg)
 
+## Naoshima
 ![Chichu art museum](/img/001157170008.jpg)
 ![Chichu art museum](/img/001157170009.jpg)
 ![Chichu art museum](/img/001157170010.jpg)
@@ -38,12 +36,8 @@ tags:
 ![Naoshima island town](/img/001157170027.jpg)
 ![Naoshima island town](/img/001157170029.jpg)
 ![Naoshima island town](/img/001157170030.jpg)
-
-![Inujima](/img/001157170034.jpg)
-![Inujima](/img/001157170031.jpg)
-
 ![Kusama pumpkin](/img/0011571700016.jpg)
 
-
-
-
+## Inujima
+![Inujima](/img/001157170034.jpg)
+![Inujima](/img/001157170031.jpg)
