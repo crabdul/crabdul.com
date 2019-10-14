@@ -150,7 +150,7 @@ ul.entries li:hover {
     position: relative;
 	display: grid;
 	grid-gap: $gutter-gap;
-	
+
     @include breakpoint(sm) {
 		grid-template-columns: 2fr 1fr 7fr 1fr;
         grid-template-areas: 'meta . content .'
@@ -209,4 +209,8 @@ ul.entries li:hover {
     @include breakpoint(sm) {
         text-align: right;
     }
+}
+
+.rotate {
+    transform: rotate(90deg);
 }

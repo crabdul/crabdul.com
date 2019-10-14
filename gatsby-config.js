@@ -1,76 +1,77 @@
 module.exports = {
-    siteMetadata: {
-        title: 'crab.land',
-        description: 'a place for my photos',
+  siteMetadata: {
+    title: "crab.land",
+    description: "a place for my photos"
+  },
+  plugins: [
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
+    {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "uploads"
+      }
     },
-    plugins: [
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sass',
-        {
-            // keep as first gatsby-source-filesystem plugin for gatsby image support
-            resolve: 'gatsby-source-filesystem',
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: "pages"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/img`,
+        name: "images"
+      }
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
             options: {
-                path: `${__dirname}/static/img`,
-                name: 'uploads',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
+              name: "uploads"
+            }
+          },
+          {
+            resolve: "gatsby-remark-images",
             options: {
-                path: `${__dirname}/src/pages`,
-                name: 'pages',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+              sizeByPixelDensity: true
+            }
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
             options: {
-                path: `${__dirname}/src/img`,
-                name: 'images',
-            },
-        },
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp',
-        {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [
-                    {
-                        resolve: 'gatsby-remark-relative-images',
-                        options: {
-                            name: 'uploads',
-                        },
-                    },
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            // It's important to specify the maxWidth (in pixels) of
-                            // the content container as this plugin uses this as the
-                            // base for generating different widths of each image.
-                            maxWidth: 2048,
-                        },
-                    },
-                    {
-                        resolve: 'gatsby-remark-copy-linked-files',
-                        options: {
-                            destinationDir: 'static',
-                        },
-                    },
-                ],
-            },
-        },
-        {
-            resolve: 'gatsby-plugin-netlify-cms',
-            options: {
-                modulePath: `${__dirname}/src/cms/cms.js`,
-            },
-        },
-        'gatsby-plugin-purgecss', // must be after other CSS plugins
-        'gatsby-plugin-netlify', // make sure to keep it last in the array
-        {
-            resolve: 'gatsby-plugin-google-analytics',
-            options: {
-                trackingId: 'UA-116304579-2',
-            },
-        },
-    ],
-}
+              destinationDir: "static"
+            }
+          }
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
+    "gatsby-plugin-purgecss", // must be after other CSS plugins
+    "gatsby-plugin-netlify", // make sure to keep it last in the array
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: "UA-116304579-2"
+      }
+    }
+  ]
+};
