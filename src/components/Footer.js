@@ -13,7 +13,7 @@ const Footer = () => {
           <a href="mailto:karim.elkhazaani@zoho.com" target="_blank">
             Email
           </a>
-          /{" "}
+          {" "}/{" "}
           <a href="https://www.linkedin.com/in/el-khazaani/" target="_blank">
             LinkedIn
           </a>
