@@ -6,7 +6,7 @@
     "tabWidth": 4,
     "requireConfig": false,
     "useTabs": false,
-    "trailingComma": true,
+    "trailingComma": "es5",
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
     "semi": true

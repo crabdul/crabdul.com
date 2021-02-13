@@ -1,6 +1,6 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import { animateAndNavigateTo } from '../utils/helpers'
+import React from 'react';
+import Img from 'gatsby-image';
+import { animateAndNavigateTo } from '../utils/helpers';
 
 const Entry = ({ post }) => (
     <article
@@ -21,6 +21,6 @@ const Entry = ({ post }) => (
             <p>{post.excerpt}</p>
         </div>
     </article>
-)
+);
 
-export default Entry
+export default Entry;
