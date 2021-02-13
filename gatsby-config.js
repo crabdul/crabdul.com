@@ -67,9 +67,14 @@ module.exports = {
         'gatsby-plugin-purgecss', // must be after other CSS plugins
         'gatsby-plugin-netlify', // make sure to keep it last in the array
         {
-            resolve: 'gatsby-plugin-google-analytics',
+            resolve: `gatsby-plugin-google-gtag`,
             options: {
-                trackingId: 'UA-116304579-2',
+                // You can add multiple tracking ids and a pageview event will be fired for all of them.
+                trackingIds: [
+                    'G-0GF92JZFX8', // Google Analytics / GA
+                    'AW-CONVERSION_ID', // Google Ads / Adwords / AW
+                    'DC-FLOODIGHT_ID', // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+                ],
             },
         },
         'gatsby-plugin-postcss',
