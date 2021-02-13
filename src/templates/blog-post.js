@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import Entry from '../components/Entry'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import Helmet from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Entry from '../components/Entry';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 export const BlogPostTemplate = ({
     content,
@@ -14,9 +14,9 @@ export const BlogPostTemplate = ({
     description,
     tags,
     title,
-    helmet,
+    helmet
 }) => {
-    const PostContent = contentComponent || Content
+    const PostContent = contentComponent || Content;
 
     return (
         <section className="section blog-post">
@@ -24,7 +24,7 @@ export const BlogPostTemplate = ({
             <div className="container">
                 <div className="post-meta-content">
                     <div className="post-meta">
-                        <h1 className="p">{title}</h1>
+                        <h1 className="text-lg font-bold">{title}</h1>
                         <small>{date}</small>
                     </div>
                     <div className="post-content">
@@ -33,7 +33,7 @@ export const BlogPostTemplate = ({
                             <div
                                 style={{
                                     marginTop: `4rem`,
-                                    marginBottom: `2rem`,
+                                    marginBottom: `2rem`
                                 }}
                             >
                                 <h4>Tags</h4>
@@ -54,8 +54,8 @@ export const BlogPostTemplate = ({
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 BlogPostTemplate.propTypes = {
     content: PropTypes.node.isRequired,
@@ -64,18 +64,18 @@ BlogPostTemplate.propTypes = {
     description: PropTypes.string,
     tags: PropTypes.array,
     title: PropTypes.string,
-    helmet: PropTypes.object,
-}
+    helmet: PropTypes.object
+};
 
 const BlogPost = ({ data }) => {
-    const { post } = data
-    const { nextPost, previousPost } = data
-    const posts = []
+    const { post } = data;
+    const { nextPost, previousPost } = data;
+    const posts = [];
     if (nextPost) {
-        posts.push(nextPost)
+        posts.push(nextPost);
     }
     if (previousPost) {
-        posts.push(previousPost)
+        posts.push(previousPost);
     }
 
     return (
@@ -107,16 +107,16 @@ const BlogPost = ({ data }) => {
                 </ul>
             </div>
         </Layout>
-    )
-}
+    );
+};
 
 BlogPost.propTypes = {
     data: PropTypes.shape({
-        markdownRemark: PropTypes.object,
-    }),
-}
+        markdownRemark: PropTypes.object
+    })
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
     query BlogPostByID($id: String!, $nextId: String, $previousId: String) {
@@ -169,4 +169,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;

@@ -1,37 +1,9 @@
 @import '../styles/mixins';
 @import '../styles/variables';
 @import url('https://fonts.googleapis.com/css?family=Karla');
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
 
 body {
     font-family: 'Karla', sans-serif;
-    font-size: 62.5%;
-}
-
-
-a, blockquote, li, ol, p, .p, small, ul {
-	font-size: 1.05rem;
-	line-height: 1.6rem;
-}
-
-h1 { font-size: 1.5rem; }
-h2 { font-size: 1.17rem; }
-h3 { font-size: 1.12rem; }
-h4 { font-size: 1.05rem; }
-h5 { font-size: .83rem; }
-h6 { font-size: .75rem; }
-
-h1, h2, ul {
-	margin: 0;
-    padding: 0;
 }
 
 a, a:active, a:visited, {
@@ -45,20 +17,13 @@ a:hover {
     border-bottom: 1px solid $pink-500;
 }
 
+h1, h2, ul {
+	margin: 0;
+    padding: 0;
+}
+
 li {
     list-style-type: none;
-}
-
-blockquote {
-    border-left: 1px solid #000;
-    margin: 1.6rem 0;
-    padding-left: 2rem;
-}
-
-figcaption {
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 2.4rem;
 }
 
 $gutter-gap: 16px;
