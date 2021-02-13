@@ -14,7 +14,7 @@ export const BlogPostTemplate = ({
     description,
     tags,
     title,
-    helmet
+    helmet,
 }) => {
     const PostContent = contentComponent || Content;
 
@@ -33,7 +33,7 @@ export const BlogPostTemplate = ({
                             <div
                                 style={{
                                     marginTop: `4rem`,
-                                    marginBottom: `2rem`
+                                    marginBottom: `2rem`,
                                 }}
                             >
                                 <h4>Tags</h4>
@@ -64,7 +64,7 @@ BlogPostTemplate.propTypes = {
     description: PropTypes.string,
     tags: PropTypes.array,
     title: PropTypes.string,
-    helmet: PropTypes.object
+    helmet: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -72,10 +72,14 @@ const BlogPost = ({ data }) => {
     const { nextPost, previousPost } = data;
     const posts = [];
     if (nextPost) {
-        posts.push(nextPost);
+        if (nextPost.id !== post.id) {
+            posts.push(nextPost);
+        }
     }
     if (previousPost) {
-        posts.push(previousPost);
+        if (previousPost.id !== post.id && previousPost.id !== nextPost.id) {
+            posts.push(previousPost);
+        }
     }
 
     return (
@@ -112,8 +116,8 @@ const BlogPost = ({ data }) => {
 
 BlogPost.propTypes = {
     data: PropTypes.shape({
-        markdownRemark: PropTypes.object
-    })
+        markdownRemark: PropTypes.object,
+    }),
 };
 
 export default BlogPost;
