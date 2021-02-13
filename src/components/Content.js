@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export const HTMLContent = ({ content, className }) => (
-    <div class="prose">
+    <div className="prose">
         <div
             className={className}
             dangerouslySetInnerHTML={{ __html: content }}
@@ -11,7 +11,7 @@ export const HTMLContent = ({ content, className }) => (
 );
 
 const Content = ({ content, className }) => (
-    <div class="prose">
+    <div className="prose">
         <div className={className}>{content}</div>
     </div>
 );
