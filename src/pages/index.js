@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Entry from '../components/Entry';
@@ -11,18 +12,28 @@ export default class IndexPage extends React.Component {
 
         return (
             <Layout>
-                <section className="index-page">
-                    <div className="container">
-                        <ul className="entries">
-                            {posts.map(({ node: post }, i) => (
-                                <li key={i}>
-                                    {i == 0 && <div className="black-line" />}
-                                    <Entry post={post} />
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </section>
+                <motion.div
+                    initial={{
+                        opacity: 0.5,
+                        y: -10,
+                    }}
+                    animate={{ y: 0, opacity: 1 }}
+                >
+                    <section className="index-page">
+                        <div className="container">
+                            <ul className="entries">
+                                {posts.map(({ node: post }, i) => (
+                                    <li key={i}>
+                                        {i == 0 && (
+                                            <div className="black-line" />
+                                        )}
+                                        <Entry post={post} />
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </section>
+                </motion.div>
             </Layout>
         );
     }
@@ -31,9 +42,9 @@ export default class IndexPage extends React.Component {
 IndexPage.propTypes = {
     data: PropTypes.shape({
         allMarkdownRemark: PropTypes.shape({
-            edges: PropTypes.array
-        })
-    })
+            edges: PropTypes.array,
+        }),
+    }),
 };
 
 export const pageQuery = graphql`
