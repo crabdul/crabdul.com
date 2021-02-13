@@ -1,10 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.scss'
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import './all.scss';
 
 const TemplateWrapper = ({ children }) => (
     <StaticQuery
@@ -54,12 +54,12 @@ const TemplateWrapper = ({ children }) => (
                     />
                     <link
                         rel="mask-icon"
-                        href="/img/safari-pinned-tab.svg"
+                        href="/img/favicon.png?v=2"
                         color="#ff4400"
                     />
                     <meta name="theme-color" content="#fff" />
 
-                    <meta property="og:type" content="business.business" />
+                    <meta property="og:type" content="programming blog" />
                     <meta
                         property="og:title"
                         content={data.site.siteMetadata.title}
@@ -74,6 +74,6 @@ const TemplateWrapper = ({ children }) => (
             </div>
         )}
     />
-)
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;
