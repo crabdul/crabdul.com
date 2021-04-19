@@ -119,10 +119,11 @@ ul.entries li:hover {
 
 .post-meta-content {
     position: relative;
-	display: grid;
+	display: block;
 	grid-gap: $gutter-gap;
 
     @include breakpoint(sm) {
+        display: grid;
 		grid-template-columns: 2fr 1fr 7fr 1fr;
         grid-template-areas: 'meta . content .'
 	}

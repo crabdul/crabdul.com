@@ -23,7 +23,7 @@ export const BlogPostTemplate = ({
             {helmet || ''}
             <div className="container">
                 <div className="post-meta-content">
-                    <div className="mb-10 post-meta sm:mb-0">
+                    <div className="mb-10 post-meta sm:mb-0 md:mb-4">
                         <h1 className="text-lg font-bold">{title}</h1>
                         <small className="text-base text-gray-600">
                             {date}
