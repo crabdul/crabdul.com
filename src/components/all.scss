@@ -43,7 +43,6 @@ nav {
     width: 100%;
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: white;
 }
 
 .navbar {
@@ -52,7 +51,6 @@ nav {
     grid-template-areas: 'home . menu portfolio';
     grid-gap: $gutter-gap;
     width: 100%;
-    background-color: white;
 }
 
 .navbar-home {
@@ -89,18 +87,13 @@ ul.entries li:hover {
     transform: translateY(-32px);
 }
 
-.black-line {
-    border-top: 1px solid black;
-}
 
 .entry {
-    border-top: 1px solid black;
     cursor: pointer;
     position: relative;
     height: 196px;
     padding-top: 16px;
     margin-bottom: -32px;
-    background-color: white;
     transition: all .4s ease;
     overflow: hidden;
 }
@@ -171,8 +164,6 @@ ul.entries li:hover {
     z-index: 999;
     display: grid;
     min-height: 96px;
-    background-color: white;
-    border-top: 1px solid black;
 
     @include breakpoint(sm) {
         grid-template-columns: 1fr 1fr;

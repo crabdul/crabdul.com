@@ -25,7 +25,7 @@ export default class IndexPage extends React.Component {
                                 {posts.map(({ node: post }, i) => (
                                     <li key={i}>
                                         {i == 0 && (
-                                            <div className="black-line" />
+                                            <div className="border-t border-black dark:border-gray-500" />
                                         )}
                                         <Entry post={post} />
                                     </li>

@@ -24,8 +24,10 @@ export const BlogPostTemplate = ({
             <div className="container">
                 <div className="post-meta-content">
                     <div className="mb-10 post-meta sm:mb-0 md:mb-4">
-                        <h1 className="text-lg font-bold">{title}</h1>
-                        <small className="text-base text-gray-600">
+                        <h1 className="text-lg font-bold dark:text-pink">
+                            {title}
+                        </h1>
+                        <small className="text-base text-gray-600 dark:text-lightpink">
                             {date}
                         </small>
                     </div>
@@ -40,7 +42,7 @@ export const BlogPostTemplate = ({
                             >
                                 <h4>Tags</h4>
                                 <ul className="taglist">
-                                    {tags.map((tag) => (
+                                    {tags.map(tag => (
                                         <li key={tag + `tag`}>
                                             <Link
                                                 to={`/tags/${kebabCase(tag)}/`}

@@ -6,6 +6,31 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import './all.scss';
 
+const DarkMode = () => {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    try {
+        if (
+            (localStorage && localStorage.theme === 'dark') ||
+            (!('theme' in localStorage) &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch (e) {
+        // no op
+    }
+
+    // Whenever the user explicitly chooses light mode
+    // localStorage.theme = 'light';
+
+    // Whenever the user explicitly chooses dark mode
+    // localStorage.theme = 'dark';
+
+    return null;
+};
+
 const TemplateWrapper = ({ children }) => (
     <StaticQuery
         query={graphql`
@@ -19,7 +44,7 @@ const TemplateWrapper = ({ children }) => (
             }
         `}
         render={data => (
-            <div>
+            <div className="dark:bg-darkpurple dark:text-white min-h-screen">
                 <Helmet>
                     <html lang="en" />
                     <title>{data.site.siteMetadata.title}</title>
@@ -27,7 +52,6 @@ const TemplateWrapper = ({ children }) => (
                         name="description"
                         content={data.site.siteMetadata.description}
                     />
-
                     <link
                         rel="apple-touch-icon"
                         sizes="180x180"
@@ -68,6 +92,7 @@ const TemplateWrapper = ({ children }) => (
                     <meta property="og:image" content="/img/favicon.png" />
                 </Helmet>
                 <Navbar />
+                <DarkMode />
                 <div className="spacer" />
                 <div>{children}</div>
                 <Footer />

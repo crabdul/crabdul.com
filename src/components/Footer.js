@@ -4,15 +4,20 @@ const Footer = () => {
     const date = new Date().getFullYear();
     return (
         <footer className="container">
-            <div className="footer">
+            <div className="footer dark:bg-darkpurple dark:text-gray-400 border-t border-black dark:border-gray-500">
                 <p>
-                    <a href="https://github.com/crabdul" target="_blank">
+                    <a
+                        href="https://github.com/crabdul"
+                        target="_blank"
+                        className=""
+                    >
                         Github: crabdul
                     </a>{' '}
                     /{' '}
                     <a
                         href="https://www.linkedin.com/in/el-khazaani/"
                         target="_blank"
+                        className=""
                     >
                         LinkedIn
                     </a>
