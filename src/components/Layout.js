@@ -44,7 +44,7 @@ const TemplateWrapper = ({ children }) => (
             }
         `}
         render={data => (
-            <div className="dark:bg-darkpurple dark:text-white min-h-screen">
+            <div className="min-h-screen bg-darkpurple text-white">
                 <Helmet>
                     <html lang="en" />
                     <title>{data.site.siteMetadata.title}</title>
@@ -92,7 +92,6 @@ const TemplateWrapper = ({ children }) => (
                     <meta property="og:image" content="/img/favicon.png" />
                 </Helmet>
                 <Navbar />
-                <DarkMode />
                 <div className="spacer" />
                 <div>{children}</div>
                 <Footer />

@@ -24,10 +24,8 @@ export const BlogPostTemplate = ({
             <div className="container">
                 <div className="post-meta-content">
                     <div className="mb-10 post-meta sm:mb-0 md:mb-4">
-                        <h1 className="text-lg font-bold dark:text-pink">
-                            {title}
-                        </h1>
-                        <small className="text-base text-gray-600 dark:text-lightpink">
+                        <h1 className="text-lg font-bold text-pink">{title}</h1>
+                        <small className="text-base text-lightpink">
                             {date}
                         </small>
                     </div>

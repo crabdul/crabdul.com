@@ -4,7 +4,7 @@ const Footer = () => {
     const date = new Date().getFullYear();
     return (
         <footer className="container">
-            <div className="footer dark:bg-darkpurple dark:text-gray-400 border-t border-black dark:border-gray-500">
+            <div className="footer bg-darkpurple text-gray-400 border-t border-gray-500">
                 <p>
                     <a
                         href="https://github.com/crabdul"
