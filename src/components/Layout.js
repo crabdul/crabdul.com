@@ -90,6 +90,11 @@ const TemplateWrapper = ({ children }) => (
                     />
                     <meta property="og:url" content="/" />
                     <meta property="og:image" content="/img/favicon.png" />
+                    <link
+                        rel="stylesheet"
+                        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css"
+                    />
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
                 </Helmet>
                 <Navbar />
                 <div className="spacer" />
