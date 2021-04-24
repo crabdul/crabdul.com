@@ -54,6 +54,15 @@ export const BlogPostTemplate = ({
                         ) : null}
                     </div>
                 </div>
+                <script
+                    src="https://utteranc.es/client.js"
+                    repo="crabdul/crabdul.com"
+                    issue-term="url"
+                    label="comment"
+                    theme="github-dark"
+                    crossorigin="anonymous"
+                    async
+                ></script>
             </div>
         </section>
     );
