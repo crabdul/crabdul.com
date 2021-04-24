@@ -19,9 +19,7 @@ So the requirements are clear on a feature you need to build and you're about to
 
 This is the perfect opportunity to document and share your plan for how you'll be tackling the problem.
 
-One option is to 30 minutes 'kick-off' meeting with the person who is most likely to review your work.
-
-
+One option is to **30 minutes 'kick-off' meeting** with the person who is most likely to review your work.
 
 You really should be able to another developer how you aim to implement the feature. The other developer may have some suggestions to go about the problem. 
 
@@ -31,4 +29,4 @@ Code reviews are not just technical reviews. A good review should cover domain k
 
 Don't overwhelm your colleagues at once.
 
-Ultimately, communicate early. Discover issues early.
+Ultimately, **communicate early**. Discover issues early. Don't be long.
