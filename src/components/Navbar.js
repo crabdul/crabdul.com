@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const Navbar = class extends React.Component {
     render() {
         const activeLinkStyle = {
-            color: 'rgb(233, 30, 99)',
+            color: '#f25287',
         };
         return (
             <nav role="navigation">
