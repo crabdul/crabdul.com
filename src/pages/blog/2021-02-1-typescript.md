@@ -3,12 +3,15 @@ coverPhoto: /img/001157180020.jpg
 templateKey: blog-post
 title: Kick-off meetings
 date: 2021-05-04T15:04:10.000Z
-description: Vestibulum accumsan consectetur metus, vitae luctus ligula luctus
-  vel. Duis in libero a leo pretium semper. Pellentesque habitant morbi
-  tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque
-  accumsan magna et dui placerat, non lobortis odio ullamcorper. Maecenas
-  ultricies lacus id elit posuere, at finibus erat commodo. Suspendisse potenti.
-  Aenean gravida felis eu neque maximus, ut accumsan ex finibus.
+description: >-
+  So the requirements are clear on a feature you need to build and you're about
+  to start working on it.
+
+
+  This is the perfect opportunity to document and share your plan for how you'll be tackling the problem.
+
+
+  One option is to 30 minutes 'kick-off' meeting with the person who is most likely to review your work.
 tags:
   - communication
 ---
