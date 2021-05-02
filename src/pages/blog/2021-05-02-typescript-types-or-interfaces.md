@@ -53,7 +53,7 @@ const author = book.author // ✅
 
 ```
 
-There is no equialent of this for `type` aliases.
+There is no equialent of this for `type` aliases. Once a type is defined, it cannot be redefined.
 
 If you're working in the domain, I think the scenario in which you use declaration merging will be quite low as you probably want to define your type in a single place in one-go rather than in multiple places. [Having the ability to have multiple declarations for the same interface allows "polyfilling" in JS frameworks to be modelled](https://github.com/Microsoft/TypeScript/pull/3622#issuecomment-118417888).
 
