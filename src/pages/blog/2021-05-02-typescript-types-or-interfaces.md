@@ -55,11 +55,11 @@ const author = book.author // ✅
 
 There is no equialent of this for `type` aliases. Once a type is defined, it cannot be redefined.
 
-If you're working in the domain, I think the scenario in which you use declaration merging will be quite low as you probably want to define your type in a single place in one-go rather than in multiple places. [Having the ability to have multiple declarations for the same interface allows "polyfilling" in JS frameworks to be modelled](https://github.com/Microsoft/TypeScript/pull/3622#issuecomment-118417888).
+Whether you need this feature probably depends on what kind of code you're writing. If you're working in your business domain, you probably want to define your type in a single place in rather composing it across different areas of your code. However if you're a JS framework developer, you may find declaration merging useful. [Having the ability to have multiple declarations for the same interface allows "polyfilling" in JS frameworks to be modelled](https://github.com/Microsoft/TypeScript/pull/3622#issuecomment-118417888).
 
-According to the TypeScript Handbook's section on [Interfaces vs. Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces), **they recommend using `interface` unless any features from `type` are required** without giving much a clear reason as to why.
+According to the TypeScript Handbook's section on [Interfaces vs. Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces), **they recommend using `interface` unless any features from `type` are required**.
 
-Personally, I like the semantics of using `type` however it looks like `interface` has performance benefits over `type` according to [Daniel Rosenwasser](https://twitter.com/drosenwasser/status/1319205169918144513).
+Personally, I like the semantics of using `type`, however `interface` has performance benefits over `type` according to [Daniel Rosenwasser](https://twitter.com/drosenwasser/status/1319205169918144513).
 
 > Honestly, my take is that it should really just be interfaces for anything that they can model. There is no benefit to type aliases when there are so many issues around display/perf.
 
@@ -113,5 +113,7 @@ const somethingsWrong: C = { x: 10 }
 // error TS2322: Type 'number' is not assignable to type 'never'.
 The expected type comes from property 'x' which is declared here on type 'C'
 ```
+
+So the main takeaway is: **Use `interface` if you don't need the functionality of `type`**.
 
 Enforcing the rule of `interface` > `type` where possible may be tricky so here's a [eslint plugin](https://github.com/cartant/eslint-plugin-etc/blob/5c2646a397dc2e174b23587af4daa9f1f9047d5f/docs/rules/prefer-interface.md) which may help you!
