@@ -10,10 +10,6 @@ module.exports = {
             },
         },
     },
-    variants: {
-        extend: {
-            typography: ['dark'],
-        },
-    },
+    variants: {},
     plugins: [require(`@tailwindcss/typography`)],
 };
