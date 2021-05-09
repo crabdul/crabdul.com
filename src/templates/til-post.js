@@ -12,7 +12,6 @@ export const BlogPostTemplate = ({
     contentComponent,
     date,
     description,
-    templateKey,
     tags,
     title,
     helmet,
@@ -29,11 +28,6 @@ export const BlogPostTemplate = ({
                         <small className="text-base text-lightpink">
                             {date}
                         </small>
-                        <div>
-                            <small className="text-base opacity-75 text-lightpink">
-                                {templateKey == 'til-post' ? 'TIL' : 'Blog'}
-                            </small>
-                        </div>
                     </div>
                     <div className="post-content">
                         <PostContent content={content} title={title} />
@@ -107,7 +101,6 @@ const BlogPost = ({ data }) => {
                     </Helmet>
                 }
                 tags={post.frontmatter.tags}
-                templateKey={post.frontmatter.templateKey}
                 title={post.frontmatter.title}
             />
             <div className="container">
@@ -132,7 +125,7 @@ BlogPost.propTypes = {
 export default BlogPost;
 
 export const pageQuery = graphql`
-    query BlogPostByID($id: String!, $nextId: String, $previousId: String) {
+    query TILPostByID($id: String!, $nextId: String, $previousId: String) {
         post: markdownRemark(id: { eq: $id }) {
             id
             html

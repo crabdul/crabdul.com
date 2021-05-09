@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Entry from '../components/Entry';
-import Layout from '../components/Layout';
+import Entry from '../../components/Entry';
+import Layout from '../../components/Layout';
 
 export default class IndexPage extends React.Component {
     render() {
@@ -27,7 +27,7 @@ export default class IndexPage extends React.Component {
                                         {i == 0 && (
                                             <div className="border-t border-gray-500" />
                                         )}
-                                        <Entry post={post} showType={true} />
+                                        <Entry post={post} />
                                     </li>
                                 ))}
                             </ul>
@@ -48,12 +48,10 @@ IndexPage.propTypes = {
 };
 
 export const pageQuery = graphql`
-    query IndexQuery {
+    query TILIndexQuery {
         allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: {
-                frontmatter: { templateKey: { in: ["blog-post", "til-post"] } }
-            }
+            filter: { frontmatter: { templateKey: { eq: "til-post" } } }
         ) {
             edges {
                 node {

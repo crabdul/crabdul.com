@@ -19,13 +19,20 @@ const Navbar = class extends React.Component {
                                 crabdul.com
                             </Link>
                         </div>
-                        <div className="navbar-menu">
+                        <div className="navbar-menu flex space-x-4">
                             <Link
                                 className="navbar-menu-item"
-                                to="/"
+                                to="/blog"
                                 activeStyle={activeLinkStyle}
                             >
                                 Blog
+                            </Link>
+                            <Link
+                                className="navbar-menu-item"
+                                to="/til"
+                                activeStyle={activeLinkStyle}
+                            >
+                                TIL
                             </Link>
                         </div>
                         <div className="navbar-portfolio">
