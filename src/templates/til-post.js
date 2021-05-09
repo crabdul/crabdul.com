@@ -107,7 +107,7 @@ const BlogPost = ({ data }) => {
                 <ul className="entries">
                     {posts.map((post, i) => (
                         <li key={i}>
-                            <Entry post={post} />
+                            <Entry post={post} showType={true} />
                         </li>
                     ))}
                 </ul>

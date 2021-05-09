@@ -1,67 +1,9 @@
 ---
-coverPhoto: /img/001157180020.jpg
 templateKey: til-post
-title: Xstate
-date: 2021-04-04T15:04:10.000Z
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis
-  porttitor nisi, sed ullamcorper orci. Pellentesque ut lobortis velit, id
-  gravida augue. Praesent tincidunt mi vitae aliquam tincidunt. Sed quis
-  bibendum lacus, eget faucibus dui. Curabitur eget blandit arcu, non posuere
-  orci. In sem dui, dapibus sit amet dapibus vitae, eleifend sed nunc. Etiam
-  eleifend tellus eget nisl venenatis cursus. Aliquam erat volutpat. Vestibulum
-  ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-  Sed accumsan ut orci et interdum. Sed sit amet massa porta, volutpat orci
-  vitae, semper orci.
+title: NAT Instances for your hobby project
+date: 2021-05-09T15:04:10.000Z
 tags:
-  - xstate
+  - AWS
 ---
-# [\#](https://xstate.js.org/docs/guides/transitions.html#transitions)Transitions
 
-A state transition defines what the **next state** is, given the **current state** and **[event](https://xstate.js.org/docs/guides/events.html)**. State transitions are defined on state nodes, in the `on` property
-
-```typescript
-import { Machine } from 'xstate';
-
-const promiseMachine = Machine({
-  id: 'promise',
-  initial: 'pending',
-  states: {
-    pending: {
-      on: {
-        // state transition (shorthand)
-        // this is equivalent to { target: 'resolved' }
-        RESOLVE: 'resolved',
-
-        // state transition (object)
-        REJECT: {
-          target: 'rejected'
-        }
-      }
-    },
-    resolved: {
-      type: 'final'
-    },
-    rejected: {
-      type: 'final'
-    }
-  }
-});
-
-const { initialState } = promiseMachine;
-
-console.log(initialState.value);
-// => 'pending'
-
-const nextState = promiseMachine.transition(initialState, 'RESOLVE');
-
-console.log(nextState.value);
-// => 'resolved'
-```
-
-```html
-<div>Hello</div>
-```
-
-```html
-<div>Hello</div>
-```
+NAT Gateways are bloody expensive (for a hobby project that is).
