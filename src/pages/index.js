@@ -27,7 +27,7 @@ export default class IndexPage extends React.Component {
                                         {i == 0 && (
                                             <div className="border-t border-gray-500" />
                                         )}
-                                        <Entry post={post} />
+                                        <Entry post={post} showType={true} />
                                     </li>
                                 ))}
                             </ul>

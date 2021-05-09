@@ -1,7 +1,7 @@
 import React from 'react';
 import { animateAndNavigateTo } from '../utils/helpers';
 
-const Entry = ({ post }) => (
+const Entry = ({ post, showType }) => (
     <article
         className="entry post-meta-content bg-darkpurple border-t border-gray-500"
         onClick={e => animateAndNavigateTo(e, post.fields.slug)}
@@ -14,6 +14,15 @@ const Entry = ({ post }) => (
             <small className="text-base text-lightpink">
                 {post.frontmatter.date}
             </small>
+            {showType && (
+                <div>
+                    <small className="text-base opacity-75 text-lightpink">
+                        {post.frontmatter.templateKey == 'til-post'
+                            ? 'TIL'
+                            : 'Blog'}
+                    </small>
+                </div>
+            )}
         </div>
         <div className="post-content">
             <p className="text-gray-400 prose">{post.excerpt}</p>
