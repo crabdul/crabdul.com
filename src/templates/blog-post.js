@@ -110,15 +110,13 @@ const BlogPost = ({ data }) => {
                 templateKey={post.frontmatter.templateKey}
                 title={post.frontmatter.title}
             />
-            <div className="container">
-                <ul className="entries">
-                    {posts.map((post, i) => (
-                        <li key={i}>
-                            <Entry post={post} showType={true} />
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <ul className="entries">
+                {posts.map((post, i) => (
+                    <li key={i} className="container">
+                        <Entry post={post} showType={true} />
+                    </li>
+                ))}
+            </ul>
         </Layout>
     );
 };

@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1, h2, h3, h4, h5, h6, strong, blockquote, a {
+    color: white !important;
+}
+
+.prose code::before,
+.prose code::after {
+    visibility: hidden;
+}
