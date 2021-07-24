@@ -7,7 +7,10 @@ const Navbar = class extends React.Component {
             color: '#f25287',
         };
         return (
-            <nav role="navigation">
+            <nav role="navigation" style={{
+                background: 'rgba(21, 21, 21, 0.8)',
+                backdropFilter: 'blur(10px)',
+                }}>
                 <div className="container">
                     <div
                         className="navbar"
