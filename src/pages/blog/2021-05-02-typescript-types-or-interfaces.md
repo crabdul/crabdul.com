@@ -15,6 +15,8 @@ and in many cases, they can be used interchangeably. But engineers like conventi
 
 Before digging into why you might want to use one or other, let's quickly discuss the difference between `type` and `interface`.
 
+## The similarities and differences between types and interfaces
+
 **Most of the time, an object type can be similarly represented by both a `type` alias and an `interface` alias.**
 
 ```ts
@@ -67,7 +69,7 @@ Personally, I like the semantics of using `type`, however `interface` has perfor
 
 This is explained in more detail in the [Performance section of the TypeScript wiki](https://github.com/microsoft/TypeScript/wiki/Performance#preferring-interfaces-over-intersections).
 
-**Extending types with `interface`s/`extends` is preferred over creating __intersection__ types**.
+### Extending types with interfaces is preferred over creating __intersection__ types
 
 ```ts
 // ❌
