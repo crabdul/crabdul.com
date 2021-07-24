@@ -95,8 +95,6 @@ const TemplateWrapper = ({ children }) => (
                 <div className="spacer" />
                 <div>{children}</div>
                 <Footer />
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
-                <script>hljs.highlightAll();</script>
             </div>
         )}
     />
