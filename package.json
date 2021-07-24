@@ -13,7 +13,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.3",
     "eslint-plugin-vue": "^5.1.0",
-    "framer-motion": "^3.3.0",
+    "framer-motion": "^4.1.17",
     "gatsby": "^2.32.3",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-google-analytics": "^2.0.13",
