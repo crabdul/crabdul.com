@@ -26,7 +26,7 @@ export const BlogPostTemplate = ({
             <div className="container">
                 <div className="post-meta-content relative">
                     <div className="mb-10 post-meta md:mb-4 relative md:fixed max-w-10">
-                        <h1 className="text-lg font-bold text-pink">{title}</h1>
+                        <h1 className="text-lg font-bold text-pink max-w-xs	" style={{"maxWidth": "180px"}}>{title}</h1>
                         <small className="text-base text-lightpink">
                             {date}
                         </small>

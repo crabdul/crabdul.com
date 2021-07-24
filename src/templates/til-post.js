@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Entry from '../components/Entry';
 import Layout from '../components/Layout';
+import {CircleIndicator }from '../components/CircleIndicator'
 import Content, { HTMLContent } from '../components/Content';
 
 export const BlogPostTemplate = ({
@@ -13,6 +14,7 @@ export const BlogPostTemplate = ({
     date,
     description,
     tags,
+    templateKey,
     title,
     helmet,
 }) => {
@@ -24,10 +26,18 @@ export const BlogPostTemplate = ({
             <div className="container">
                 <div className="post-meta-content relative">
                     <div className="mb-10 post-meta md:mb-4 md:fixed relative">
-                        <h1 className="text-lg font-bold text-pink">{title}</h1>
+                        <h1 className="text-lg font-bold text-pink max-w-xs	" style={{"maxWidth": "180px"}}>{title}</h1>
                         <small className="text-base text-lightpink">
                             {date}
                         </small>
+                        <div>
+                            <small className="text-base opacity-75 text-lightpink">
+                                {templateKey == 'til-post' ? 'TIL' : 'Blog'}
+                            </small>
+                        </div>
+                        <div class="mt-4 w-10">
+                        <CircleIndicator />
+                        </div>
                     </div>
                     <div className="post-content">
                         <PostContent content={content} title={title} />
