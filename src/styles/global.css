@@ -5,17 +5,16 @@
 
 
 .prose strong {
-    @apply text-gray-300 !important;
+    @apply text-pink !important;
 }
 
 .prose blockquote {
-    @apply text-gray-400;
+    @apply text-gray-100;
 }
 
 .prose code {
     color: rgb(242, 82, 135);
     background-color: #1f2937;
-    padding: 3px 0;
     border-radius: 4px;
 }
 
@@ -30,5 +29,5 @@
 
 .prose a {
     text-decoration: none;
-    color: white;
+    @apply text-lightpink;
 }
