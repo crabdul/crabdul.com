@@ -133,6 +133,7 @@ ul.entries li:hover {
 
 .post-content {
     grid-area: content;
+    max-width: 576px; // TODO: Maybe a better way to do this
 }
 
 .post-content p:first-child {
