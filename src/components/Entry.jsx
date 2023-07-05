@@ -25,7 +25,7 @@ const Entry = ({ post, showType }) => (
             )}
         </div>
         <div className="post-content">
-            <p className="text-gray-400 prose">{post.excerpt}</p>
+            <p className="text-lightpink prose">{post.excerpt}</p>
         </div>
     </article>
 );
